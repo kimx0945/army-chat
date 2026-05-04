@@ -15,6 +15,35 @@
 html,
 body {
   height: 100%;
+  /* 모바일 100svh 대응 — iOS Safari에서 주소창 높이 변화를 올바르게 처리 */
+  height: 100svh;
   background-color: #0d0d1a;
   color: #f0f0ff;
+  /* iOS Safari 텍스트 크기 자동 조절 방지 */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 스크롤바 스타일 (데스크탑) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a4a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6600ff;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes bounce-dot {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
